@@ -29,6 +29,7 @@
  */
 
 //#include "controller.h"
+#include "FileIndexer.hpp"
 
 using namespace std;
 
@@ -40,4 +41,8 @@ using namespace std;
 int main(int argc, char* argv[]) {
 	// Controller c;
 	// return c.run_app(argc, argv);
+	char filename[] = "text.txt" ;
+	FileIndexer indexer(filename);
+	indexer.IndexFile();
+	indexer.PrintResult();
 }
