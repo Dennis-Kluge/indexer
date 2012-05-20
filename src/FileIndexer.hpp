@@ -8,6 +8,8 @@
 #include <fstream>
 #include <sstream>
 
+#include "Types.h"
+
 
 using namespace std ;
 
@@ -16,15 +18,14 @@ class FileIndexer
 
     public:
     	FileIndexer(char file[]);
-    	map<string, vector<string> > IndexFile();
-    	void PrintResult(map<string, vector<string> >  mmap);
+    	MyMap IndexFile();
+    	void PrintResult(MyMap  mmap);
     	void PrintResult();
 
     private:
     	fstream stream;
     	string content;
     	char *mFile;
-    	typedef map<string, vector<string> > MyMap;
     	MyMap indexMap;
     	FileIndexer() {}
 

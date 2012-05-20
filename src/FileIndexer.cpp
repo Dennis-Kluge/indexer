@@ -28,16 +28,17 @@ void FileIndexer::PrintResult(MyMap mmap){
     while(iter != mmap.end())
     {     
     	cout << (*iter).first << "(";
-    	std::vector<string>::iterator itvec;
+    	std::vector<Entry>::iterator itvec;
     	for(itvec = (*iter).second.begin(); itvec != (*iter).second.end(); itvec++) {
-    		cout << *itvec << "+";
+            Entry pos = *itvec;
+    		cout << "(" << pos.first << "," << pos.second << ")" << "+";
     	}
     	cout << ")" <<endl;
          ++iter;
     }
 }
 
-map<string, vector<string> > FileIndexer::IndexFile(){
+MyMap FileIndexer::IndexFile(){
 	ifstream ifs(mFile) ;
     if (!ifs)
     {
@@ -51,12 +52,8 @@ map<string, vector<string> > FileIndexer::IndexFile(){
     	stringstream ss(line);
     	int j = 1;
     	while(ss >> buf) {
-    		vector<string> words;
-    		stringstream row;
-    		stringstream column;
-    		row << i;
-    		column << j;
-    		string position = "(" + row.str() + "," + column.str() + ")";
+    		vector<Entry> words;
+            Entry position (i,j);
     		MyMap::iterator it;
     		it = indexMap.find(buf);
     		if(it != indexMap.end()) {
