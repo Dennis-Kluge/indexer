@@ -1,8 +1,8 @@
 PROGNAME = indexer
 OBJECTS = src/main.o src/FileIndexer.o 
-HEADERS = src/FileIndexer.hpp 
+HEADERS = src/FileIndexer.hpp #src/indexer.h src/parser.h src/types.h src/lexcomparator.h src/controller.h
 CC = g++
-PARAMS = -Wall #-std=c++0x
+PARAMS = -Wall -std=c++0x
 VFLAGS = -g -O0
 VALGRIND = valgrind --tool=memcheck --leak-check=full -v
 PROGARGS = -i schlossindex.txt DasSchloss/*
@@ -13,7 +13,7 @@ LIBRARIES = #-l/opt/local/lib
 INCLUDES = #-I/opt/local/include/gcc45/c++
 
 all: ${OBJECTS} ${HEADER}
-	${CC} ${CFLAGS} ${OBJECTS} ${INCLUDES} -o ${PROGNAME} ${LIBRARIES}
+	${CC} ${CFLAGS} ${PARAMS} ${OBJECTS} ${INCLUDES} -o ${PROGNAME} ${LIBRARIES}
 
 .c.o:
 	${CC} ${FLAGS} -c $<
