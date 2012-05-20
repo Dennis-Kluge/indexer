@@ -24,5 +24,3 @@ public:
 	bool operator() (string, string);
 	static bool compare(char, char);
 };
-
-#endif

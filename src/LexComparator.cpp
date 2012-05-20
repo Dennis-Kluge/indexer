@@ -1,4 +1,4 @@
-#include "lexcomparator.h"
+#include "LexComparator.hpp"
 #include <algorithm>
 
 using namespace std;
