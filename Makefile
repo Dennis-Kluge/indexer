@@ -1,6 +1,6 @@
 PROGNAME = indexer
-OBJECTS = src/main.o src/indexer.o src/parser.o src/lexcomparator.o src/controller.o
-HEADERS = src/indexer.h src/parser.h src/types.h src/lexcomparator.h src/controller.h
+OBJECTS = src/main.o src/FileIndexer.o 
+HEADERS = src/FileIndexer.hpp 
 CC = g++
 PARAMS = -Wall #-std=c++0x
 VFLAGS = -g -O0
