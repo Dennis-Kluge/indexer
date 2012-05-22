@@ -45,4 +45,11 @@ int main(int argc, char* argv[]) {
 	FileIndexer indexer(filename);
 	indexer.IndexFile();
 	indexer.PrintResult();
+//	char c;
+//	string word;
+	//cout << "Befehl eingeben: " ;  cin >> c ; cin >> word ;
+//	cout << "Errgebnis" << c << " , " << word ;  
+
+
+	return EXIT_SUCCESS ;
 }

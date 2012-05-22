@@ -1,6 +1,7 @@
 #include <set>
 #include <map>
 #include <string>
+#include <vector>
 #include "LexComparator.hpp"
 
 using namespace std;

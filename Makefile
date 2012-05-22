@@ -1,9 +1,9 @@
 PROGNAME = indexer
-OBJECTS = src/main.o src/FileIndexer.o src/LexComparator.o
-HEADERS = src/FileIndexer.hpp src/LexComparator.h src/Types.h #src/indexer.h src/parser.h src/types.h src/lexcomparator.h src/controller.h
+OBJECTS = src/main.o src/FileIndexer.o src/LexComparator.o src/Parser.o
+HEADERS = src/FileIndexer.hpp src/LexComparator.h src/Types.h src/Parser.hpp #src/indexer.h src/parser.h src/types.h src/lexcomparator.h src/controller.h
 CC = g++
 PARAMS = -Wall -std=c++0x
-VFLAGS = -g -O0
+#VFLAGS = -g -O0
 VALGRIND = valgrind --tool=memcheck --leak-check=full -v
 PROGARGS = -i schlossindex.txt DasSchloss/*
 DOXYGEN = doxygen

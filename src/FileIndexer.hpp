@@ -1,3 +1,6 @@
+#include "Types.h"
+#include "Parser.hpp"
+
 #include <cstdlib>
 #include <string>
 #include <map>
@@ -7,9 +10,9 @@
 #include <iterator>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
-#include "Types.h"
-#include "Parser.cpp"
+
 
 
 using namespace std ;
@@ -22,6 +25,9 @@ class FileIndexer
     	MyMap IndexFile();
     	void PrintResult(MyMap  mmap);
     	void PrintResult();
+        void PrintWordIndex(string word);
+        void PrintWordsIndexes(string word);
+        
 
     private:
     	fstream stream;
@@ -29,6 +35,7 @@ class FileIndexer
     	char *mFile;
     	MyMap indexMap;
     	FileIndexer() {}
+        void PrintPositionVector(vector<Entry> v);
 
 } ;
 
