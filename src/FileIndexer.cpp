@@ -12,7 +12,7 @@ using namespace std ;
 // 	cout << nFile;
 // }
 
-FileIndexer::FileIndexer(char file[])
+FileIndexer::FileIndexer(string file)
 {
 	mFile = file;
 }
@@ -48,15 +48,20 @@ void FileIndexer::PrintWordsIndexes(string word)
     MyMap result; 
     for(it = indexMap.begin(); it != indexMap.end(); ++it) 
     {
-       /* if(word == (*it)first)
+        string sub = (*it).first.substr(0,word.size());
+       if(word == sub)
         {
-            result.insert(make_pair((*it).first,(*it).first.second)) ;
-            PrintResult(result) ;
-        } else 
-        {
-            cout << "Es ist kein Wort mit dem Anfangsbuchstaben vorhanden" ;
-        }*/
+            result.insert(make_pair((*it).first,(*it).second)) ;   
+        } 
     }
+    if(result.size() == 0)
+    {
+        cout << "Es sind keine Wörter mit diesen Anfangsbuchstaben vorhanden" ;
+    } else 
+    {
+        PrintResult(result) ;    
+    }
+    
 }
 
 void FileIndexer::PrintResult() {
@@ -65,7 +70,6 @@ void FileIndexer::PrintResult() {
 	
 
 void FileIndexer::PrintResult(MyMap mmap){
-	cout << "Ausgabe:\n";
     MyMap::iterator iter = mmap.begin();
     while(iter != mmap.end())
     {     
@@ -76,7 +80,7 @@ void FileIndexer::PrintResult(MyMap mmap){
 }
 
 MyMap FileIndexer::IndexFile(){
-	ifstream ifs(mFile) ;
+	ifstream ifs(mFile.data()) ;
     if (!ifs)
     {
         cout << "Eingabedatei \"" << mFile << "\" konnte nicht geoeffnet werden!" << endl ;

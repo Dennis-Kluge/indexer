@@ -29,10 +29,7 @@
  */
 
 //#include "controller.h"
-#include "FileIndexer.hpp"
-#include <iostream>
-#include <sstream>
-#include <string>
+#include "Controller.hpp"
 
 using namespace std;
 
@@ -42,44 +39,6 @@ using namespace std;
  * \param[in] argv die eigentlichen Kommandozeilenparameter
  */
 int main(int argc, char* argv[]) {
-	// Controller c;
-	// return c.run_app(argc, argv);
-	char filename[] = "Testdaten/Test3.c" ;
-	FileIndexer indexer(filename);
-	indexer.IndexFile();
-	indexer.PrintResult();
-	string c;
-	string word;
-	bool input = true;
-	while(input) 
-	{
-		cout << "Befehl eingeben: " ; 
-		string line;
-		getline(cin,line);
-		istringstream iss(line);
-		vector<string> com ;
-		do
-		{
-			string sub;
-			iss >> sub;
-			com.push_back(sub);
-		} while (iss);
-		if(com.size() > 3) {
-			cout << "Sie haben zu viele Befehle/Wörter angegeben" << endl;
-		}
-		if(com.size() >= 1 && com.size() <= 3) {
-			if(com[0] == "w!") {
-				indexer.PrintWordIndex(com[1]);
-			} else if(com[0] == "a!") {
-				indexer.PrintWordsIndexes(com[1]);
-			} else if(com[0] == "q!") {
-				return EXIT_SUCCESS ;				
-			} else {
-				cout << "Befehl nicht bekannt!" << endl;
-			}
-		}
-		
-	}
-
-	return EXIT_SUCCESS ;
+	 Controller c;
+	 return c.run_indexer(argc, argv);
 }

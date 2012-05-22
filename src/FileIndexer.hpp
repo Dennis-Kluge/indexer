@@ -21,7 +21,7 @@ class FileIndexer
 {
 
     public:
-    	FileIndexer(char file[]);
+    	FileIndexer(string file);
     	MyMap IndexFile();
     	void PrintResult(MyMap  mmap);
     	void PrintResult();
@@ -32,7 +32,7 @@ class FileIndexer
     private:
     	fstream stream;
     	string content;
-    	char *mFile;
+    	string mFile;
     	MyMap indexMap;
     	FileIndexer() {}
         void PrintPositionVector(vector<Entry> v);
