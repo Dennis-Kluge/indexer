@@ -30,6 +30,9 @@
 
 //#include "controller.h"
 #include "FileIndexer.hpp"
+#include <iostream>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -45,11 +48,38 @@ int main(int argc, char* argv[]) {
 	FileIndexer indexer(filename);
 	indexer.IndexFile();
 	indexer.PrintResult();
-//	char c;
-//	string word;
-	//cout << "Befehl eingeben: " ;  cin >> c ; cin >> word ;
-//	cout << "Errgebnis" << c << " , " << word ;  
-
+	string c;
+	string word;
+	bool input = true;
+	while(input) 
+	{
+		cout << "Befehl eingeben: " ; 
+		string line;
+		getline(cin,line);
+		istringstream iss(line);
+		vector<string> com ;
+		do
+		{
+			string sub;
+			iss >> sub;
+			com.push_back(sub);
+		} while (iss);
+		if(com.size() > 3) {
+			cout << "Sie haben zu viele Befehle/Wörter angegeben" << endl;
+		}
+		if(com.size() >= 1 && com.size() <= 3) {
+			if(com[0] == "w!") {
+				indexer.PrintWordIndex(com[1]);
+			} else if(com[0] == "a!") {
+				cout << "hier ist a" << endl;
+			} else if(com[0] == "q!") {
+				return EXIT_SUCCESS ;				
+			} else {
+				cout << "Befehl nicht bekannt!" << endl;
+			}
+		}
+		
+	}
 
 	return EXIT_SUCCESS ;
 }
