@@ -26,7 +26,7 @@ doku:
 	${DOXYGEN} ${DOXYFILE}
 
 valgrind:
-	${VALGRIND} ./${PROGNAME} ${PROGARGS}
+	${VALGRIND} ./${PROGNAME} #${PROGARGS}
 
 pp:
 	 -pp *.h *.cpp && mv *.pdf doc/
