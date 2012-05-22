@@ -48,22 +48,26 @@ MyMap FileIndexer::IndexFile(){
     string line;
     int i = 1;
     while(getline(ifs, line)) {
-    	string buf;
-    	stringstream ss(line);
-    	int j = 1;
-    	while(ss >> buf) {
-    		vector<Entry> words;
+    	string buf ;
+    	stringstream ss(line) ;
+    	int j = 1 ;
+        Parser parser ;
+        vector<string> lineWords = parser.parse_input_line(line) ;
+        vector<string>::iterator lwi;
+        for(lwi = lineWords.begin(); lwi != lineWords.end(); ++lwi) {
+            vector<Entry> words;
             Entry position (i,j);
-    		MyMap::iterator it;
-    		it = indexMap.find(buf);
-    		if(it != indexMap.end()) {
-    			words = (*it).second;
-    			indexMap.erase(it);
-    		}
-    		words.push_back(position);
-    		indexMap.insert( make_pair(buf,words));
-    		j++;
-    	}
+            MyMap::iterator it;
+            it = indexMap.find(buf);
+            if(it != indexMap.end()) {
+                words = (*it).second;
+                indexMap.erase(it);
+            }
+            words.push_back(position);
+            string word = *lwi ;
+            indexMap.insert( make_pair(word,words));
+            j++;
+        }
     	i++;
     }
     ifs.close() ;

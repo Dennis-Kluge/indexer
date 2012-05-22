@@ -41,7 +41,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 	// Controller c;
 	// return c.run_app(argc, argv);
-	char filename[] = "text.txt" ;
+	char filename[] = "Testdaten/Test3.c" ;
 	FileIndexer indexer(filename);
 	indexer.IndexFile();
 	indexer.PrintResult();
