@@ -1,6 +1,6 @@
 PROGNAME = indexer
-OBJECTS = src/main.o src/FileIndexer.o src/LexComparator.o src/Parser.o
-HEADERS = src/FileIndexer.hpp src/LexComparator.h src/Types.h src/Parser.hpp #src/indexer.h src/parser.h src/types.h src/lexcomparator.h src/controller.h
+OBJECTS = src/main.o src/FileIndexer.o src/LexComparator.o src/Parser.o src/Timer.o
+HEADERS = src/FileIndexer.hpp src/LexComparator.h src/Types.h src/Parser.hpp src/Timer.hpp
 CC = g++
 PARAMS = -Wall -std=c++0x
 #VFLAGS = -g -O0
@@ -26,7 +26,7 @@ doku:
 	${DOXYGEN} ${DOXYFILE}
 
 valgrind:
-	${VALGRIND} ./${PROGNAME} ${PROGARGS}
+	${VALGRIND} ./${PROGNAME} #${PROGARGS}
 
 pp:
 	 -pp *.h *.cpp && mv *.pdf doc/
