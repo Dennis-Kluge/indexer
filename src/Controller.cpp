@@ -13,7 +13,7 @@ Controller::~Controller() {
 int Controller::run_indexer(int argc, char* argv[])
 {
 	if(argc != 3){
-		cout << "Es wurden nicht genug Argumente angegeben" ;
+		cout << "Es wurden nicht genug Argumente angegeben" << endl;
 		return EXIT_FAILURE ;
 	}
 	string filename(argv[1]);
@@ -26,7 +26,7 @@ int Controller::run_indexer(int argc, char* argv[])
 	bool input = true;
 	while(input) 
 	{
-		cout << "Befehl eingeben: " ; 
+		//cout << "Befehl eingeben: " ; 
 		string line;
 		getline(cin,line);
 		istringstream iss(line);

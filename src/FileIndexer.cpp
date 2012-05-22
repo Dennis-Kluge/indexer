@@ -19,12 +19,12 @@ FileIndexer::FileIndexer(string file)
 
 void FileIndexer::PrintPositionVector(vector<Entry> positions) 
 {
-    std::vector<Entry>::iterator itvec;
-        for(itvec = positions.begin(); itvec != positions.end(); itvec++) {
-            Entry pos = *itvec;
-            cout << "(" << pos.first << "," << pos.second << ")" ;
-        }
-        cout << ")" <<endl;
+    vector<Entry>::iterator itvec;
+    for(itvec = positions.begin(); itvec != positions.end(); ++itvec) {
+        Entry pos = *itvec;
+        cout << "(" << pos.first << "," << pos.second << ")" ;
+    }
+    cout << ")" <<endl;
 }
 
 void FileIndexer::PrintWordIndex(string word) 
@@ -90,23 +90,22 @@ MyMap FileIndexer::IndexFile(){
     int i = 1;
     Parser myParser;
     while(getline(ifs, line)) {
-    	string buf ;
     	stringstream ss(line) ;
     	int j = 1 ;
         vector<string> lineWords = myParser.parse_input_line(line) ;
         vector<string>::iterator lwi;
+        bool replace;
         for(lwi = lineWords.begin(); lwi != lineWords.end(); ++lwi) {
             vector<Entry> words;
             Entry position (i,j);
             MyMap::iterator it;
-            it = indexMap.find(buf);
+            it = indexMap.find(*lwi);
             if(it != indexMap.end()) {
                 words = (*it).second;
-                indexMap.erase(it);
             }
             words.push_back(position);
             string word = *lwi ;
-            indexMap.insert( make_pair(word,words));
+            indexMap[word] = words;
             j++;
         }
     	i++;

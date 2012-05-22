@@ -3,7 +3,7 @@ Dienstag:
 	+ Programm mit Kommandozeilenparameter starten (erldigt, aber noch nicht schön)
 		-> <program> <inputfile> <outputfile>
 	+ Befehl a! <Wortanfang> muss noch eingebaut werden (erledigt, klein und großbuchstaben werden unterschieden)
-	- Verwendung der Methode replace bei schon vorhandenen keys in der Map
+	+ Verwendung der Methode replace bei schon vorhandenen keys in der Map (anders gelöst)
 	+ Controller für die Main 
 
 
