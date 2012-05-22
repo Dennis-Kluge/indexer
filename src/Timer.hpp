@@ -5,7 +5,7 @@
 
 class Timer {
     private:	
-		long sartTime;
+		long startTime;
 
     public:
 
