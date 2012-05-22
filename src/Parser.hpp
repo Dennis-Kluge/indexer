@@ -25,7 +25,7 @@ public:
 		Eine übergebene Zeile wird in einzelne Wörter zerlegt, die in einem 
 		anschließend zurückgegebenen Container vector<string> abgelegt werden. Gültige 
 		Wörter sind Zeichenketten, die dem regulären Ausdruck 
-		[a-zA-Z|_]([a-zA-Z0-9|-|_])* entsprechen.
+		[a-zA-Z_]([a-zA-Z0-9_])* entsprechen.
 		@param[in] text Zeile, die in gültige Wörter zerlegt werden soll
 		@returns die gültigen Wörter der Zeile in einem Vektor
 		*/

@@ -1,0 +1,20 @@
+Noch zu erledigen:
+Dienstag:
+	- Programm mit Kommandozeilenparameter starten
+		-> <program> <inputfile> <outputfile>
+	- Befehl a! <Wortanfang> muss noch eingebaut werden
+	- Verwendung der Methode replace bei schon vorhandenen keys in der Map
+	- Controller für die Main 
+
+
+
+Mittwoch:
+	- Aussagekräftige Fehlermeldungen bei Fehlerhafter Eingabe -> muss überprüft werden
+	- Die Form der Ausgabe des Index -> muss überprüft werden
+	- Zeichenkodierung ISO Latin1 
+	- Arbeitsspeicherfreigabe
+	- Zeitmessung
+	- Verwendung vom Klassentemplate pair -> überprüfen
+	- Klassendiagramm
+	- Code aufräumen
+	- Code dokumentieren

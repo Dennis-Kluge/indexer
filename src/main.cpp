@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
 			if(com[0] == "w!") {
 				indexer.PrintWordIndex(com[1]);
 			} else if(com[0] == "a!") {
-				cout << "hier ist a" << endl;
+				indexer.PrintWordsIndexes(com[1]);
 			} else if(com[0] == "q!") {
 				return EXIT_SUCCESS ;				
 			} else {
