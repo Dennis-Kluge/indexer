@@ -59,7 +59,6 @@ int Controller::run_indexer(int argc, char* argv[])
 				cout << "Befehl nicht bekannt!" << endl;
 			}
 		}
-		
 	}
 }
 
@@ -73,13 +72,13 @@ int Controller::run_indexer(int argc, char* argv[])
   	MyMap::iterator iter = index.begin();
     while(iter != index.end())
     {     
-    	aus << (*iter).first << "(";
+    	aus << (*iter).first 
     	 std::vector<Entry>::iterator itvec;
         for(itvec = (*iter).second.begin(); itvec != (*iter).second.end(); itvec++) {
             Entry pos = *itvec;
-            aus << "(" << pos.first << "," << pos.second << ")" ;
+            aus << " (" << pos.first << "," << pos.second << ")" ;
         }
-        aus << ")" <<endl;
+        aus <<endl;
          ++iter;
     }
 
