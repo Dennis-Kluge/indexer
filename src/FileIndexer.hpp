@@ -1,7 +1,7 @@
 #ifndef FILEINDEXER_HPP
 #define FILEINDEXERHPP
 
-#include "Types.h"
+#include "Types.hpp"
 #include "Parser.hpp"
 
 #include <cstdlib>
