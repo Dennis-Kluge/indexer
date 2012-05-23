@@ -1,7 +1,6 @@
 #ifndef FILEINDEXER_HPP
 #define FILEINDEXERHPP
 
-
 #include "Types.h"
 #include "Parser.hpp"
 
@@ -18,30 +17,70 @@
 #include <stdio.h>
 #include <ctype.h>
 
-
-
-
 using namespace std ;
-
-class FileIndexer
-{
+/*!
+ * Diese Klasse erstellt aus einer Eingabedaetei einen dazugehörigen
+ * lexikographisch sortierten Wortindex in der Form:
+ * <token> (BLANK ’(’<zeilennummer>’,’<spaltennummer>’)’ )+ .
+ *
+ * @author Swen Hutop
+ * @author Dennis Kluge
+ */
+class FileIndexer {
 
     public:
+        /*!
+        * Konstruktor der Klasse mit dem Namen der zu indizierenden Datei
+        * @param file Name der Datei
+        */
     	FileIndexer(string file);
-    	MyMap IndexFile();
-    	void PrintResult(MyMap  mmap);
-    	void PrintResult();
-        void PrintWordIndex(string word);
-        void PrintWordsIndexes(string word);
-        
 
+        /*!
+        * Indiziert die spezifizierte Datei 
+        */
+    	MyMap IndexFile();
+
+        /*!
+        * Schreibt den Index unter dem spezifizierten Dateinamen
+        * @param mmap Der Index
+        */
+    	void PrintResult(MyMap mmap);
+
+        /*!
+        * Gibt den Index für ein spezifiziertes Wort an wenn 
+        * dies einmal vorhanden ist
+        * @param word Das gesuchte Wort
+        */
+        void PrintWordIndex(string word);  
+
+        /*!
+        * Gibt den Index für ein spezifiziertes Wort an wenn 
+        * dies mehrmals vorhanden ist
+        * @param word Das gesuchte Wort
+        */
+        void PrintWordsIndexes(string word);      
+        
     private:
+        /*!
+        * File Stream zum einlesen der Datei
+        */
     	fstream stream;
-    	string content;
+
+        /*!
+        * Name der zu schreibenden Datei
+        */
     	string mFile;
+
+        /*!
+        * Der eigentliche Index
+        */
     	MyMap indexMap;
-    	FileIndexer() {}
+
+        /*!
+        * Gibt die Positionen für einen Vector von Entries aus.
+        * @param v Ein Vector von Entries
+        */
         void PrintPositionVector(vector<Entry> v);
-} ;
+};
 
 #endif
