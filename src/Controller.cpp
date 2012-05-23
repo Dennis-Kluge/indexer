@@ -66,7 +66,7 @@ int Controller::runIndexer(int argc, char* argv[]) {
 
   MyMap::iterator iter = index.begin();
   while(iter != index.end()) {     
-  	outputStream << (*iter).first 
+  	outputStream << (*iter).first;
    	std::vector<Entry>::iterator itvec;
     for(itvec = (*iter).second.begin(); itvec != (*iter).second.end(); itvec++) {
     	Entry pos = *itvec;
