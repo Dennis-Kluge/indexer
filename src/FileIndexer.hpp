@@ -1,7 +1,6 @@
 #ifndef FILEINDEXER_HPP
 #define FILEINDEXERHPP
 
-
 #include "Types.h"
 #include "Parser.hpp"
 
@@ -18,30 +17,42 @@
 #include <stdio.h>
 #include <ctype.h>
 
-
-
-
 using namespace std ;
-
-class FileIndexer
-{
+/*!
+ * Diese Klasse erstellt aus einer Eingabedaetei einen dazugehörigen
+ * lexikographisch sortierten Wortindex in der Form:
+ * <token> (BLANK ’(’<zeilennummer>’,’<spaltennummer>’)’ )+ .
+ *
+ * @author Swen Hutop
+ * @author Dennis Kluge
+ */
+class FileIndexer {
 
     public:
+        /*!
+        * Konstruktor der Klasse mit dem Namen der zu indizierenden Datei
+        * @param file Name der Datei
+        */
     	FileIndexer(string file);
-    	MyMap IndexFile();
-    	void PrintResult(MyMap  mmap);
-    	void PrintResult();
-        void PrintWordIndex(string word);
-        void PrintWordsIndexes(string word);
-        
 
+        /*!
+        * Indiziert die spezifizierte Datei 
+        */
+    	MyMap IndexFile();
+  
+        
     private:
+        /*!
+        * File Stream zum einlesen der Datei
+        */
     	fstream stream;
-    	string content;
+
+        /*!
+        * Name der zu schreibenden Datei
+        */
     	string mFile;
-    	MyMap indexMap;
-    	FileIndexer() {}
-        void PrintPositionVector(vector<Entry> v);
-} ;
+
+       
+};
 
 #endif

@@ -28,7 +28,7 @@ public:
 	~Controller();
 	
 	/*!
-	 * Destruktor der Klasse
+	 * Stößt die die Generierung des Indexes an und überwacht die Eingabe
 	 * \param[in] argc Die Anzahl der Kommandozeilenparameter
 	 * \param[in] argv Die Kommandozeilenoptionen
 	 */
@@ -46,6 +46,45 @@ private:
 	 * Gibt die Benutzung des Programms aus. 
 	 */
 	void printUsage();
+
+	/*!
+	 * Gibt einen Vector mit dem geparsten Befehl und den dazugehörigen Parametern. 
+	 */
+	vector<string> commandParser();
+
+	/*!
+	 * Ruft den FileIndexer zum generieren des Indexes auf. 
+	 */
+	MyMap generateIndex(string inputFile);
+
+
+    /*!
+    * Schreibt den Index unter dem spezifizierten Dateinamen
+    * @param indexMap Der Index
+    */
+	void printResult(MyMap indexMap);
+
+    /*!
+    * Gibt den Index für ein spezifiziertes Wort an wenn 
+    * dies einmal vorhanden ist
+    * @param word Das gesuchte Wort
+    * @param indexMap Der Index
+    */
+    void printWordIndex(string word, MyMap indexMap);  
+
+    /*!
+    * Gibt den Index für ein spezifiziertes Wort an wenn 
+    * dies mehrmals vorhanden ist
+    * @param word Das gesuchte Wort
+    * @param indexMap Der Index
+    */
+    void printWordsIndexes(string word, MyMap indexMap);    
+
+ 	/*!
+    * Gibt die Positionen für einen Vector von Entries aus.
+    * @param v Ein Vector von Entries
+    */
+    void printPositionVector(vector<Entry> v);
 };
 
 #endif
