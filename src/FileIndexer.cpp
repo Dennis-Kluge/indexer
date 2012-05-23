@@ -22,9 +22,9 @@ void FileIndexer::PrintPositionVector(vector<Entry> positions)
     vector<Entry>::iterator itvec;
     for(itvec = positions.begin(); itvec != positions.end(); ++itvec) {
         Entry pos = *itvec;
-        cout << "(" << pos.first << "," << pos.second << ")" ;
+        cout << " (" << pos.first << "," << pos.second << ")" ;
     }
-    cout << ")" <<endl;
+    cout << endl;
 }
 
 void FileIndexer::PrintWordIndex(string word) 
@@ -79,7 +79,7 @@ void FileIndexer::PrintResult(MyMap mmap){
     MyMap::iterator iter = mmap.begin();
     while(iter != mmap.end())
     {     
-    	cout << (*iter).first << "(";
+    	cout << (*iter).first;
     	PrintPositionVector(((*iter).second));
          ++iter;
     }

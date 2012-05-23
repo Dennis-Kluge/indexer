@@ -14,7 +14,7 @@ Mittwoch:
 	- Zeichenkodierung ISO Latin1 
 	- Arbeitsspeicherfreigabe
 	- Zeitmessung
-	- Verwendung vom Klassentemplate pair -> überprüfen
+	+ Verwendung vom Klassentemplate pair 
 	- Klassendiagramm
 	- Code aufräumen
 	- Code dokumentieren
