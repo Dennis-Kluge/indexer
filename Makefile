@@ -4,8 +4,8 @@ HEADERS = src/FileIndexer.hpp src/LexComparator.h src/Types.h src/Parser.hpp src
 CC = g++
 PARAMS = -Wall -std=c++0x
 #VFLAGS = -g -O0
-VALGRIND = valgrind --tool=memcheck --leak-check=full -v
-PROGARGS = -i schlossindex.txt DasSchloss/*
+VALGRIND = valgrind --tool=memcheck --leak-check=full -v --dsymutil=yes
+PROGARGS = Testdaten/Euler.txt Ausgabe.txt
 DOXYGEN = doxygen
 DOXYFILE = Doxyfile
 
@@ -26,7 +26,7 @@ doku:
 	${DOXYGEN} ${DOXYFILE}
 
 valgrind:
-	${VALGRIND} ./${PROGNAME} #${PROGARGS}
+	${VALGRIND} ./${PROGNAME} ${PROGARGS}
 
 pp:
 	 -pp *.h *.cpp && mv *.pdf doc/
