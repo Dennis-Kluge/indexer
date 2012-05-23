@@ -2,6 +2,7 @@
 #define CONTROLLER_HPP
 
 #include "FileIndexer.hpp"
+#include "Timer.hpp"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -42,6 +43,12 @@ public:
 	void writeIndexFile(string outputFile, MyMap index);
 
 private:
+
+	/*!
+    * Objekt zum messen der Zeit.
+    */
+	Timer timer;
+
 	/*!
 	 * Gibt die Benutzung des Programms aus. 
 	 */

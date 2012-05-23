@@ -7,15 +7,8 @@
 #include <cstdlib>
 #include <string>
 #include <map>
-#include <vector>
-#include <list>
 #include <iostream>
-#include <iterator>
 #include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <stdio.h>
-#include <ctype.h>
 
 using namespace std ;
 /*!
@@ -38,17 +31,13 @@ class FileIndexer {
         /*!
         * Indiziert die spezifizierte Datei 
         */
-    	MyMap IndexFile();
+    	MyMap indexFile();
   
         
     private:
-        /*!
-        * File Stream zum einlesen der Datei
-        */
-    	fstream stream;
 
         /*!
-        * Name der zu schreibenden Datei
+        * Name der zu indexierenden Datei
         */
     	string mFile;
 

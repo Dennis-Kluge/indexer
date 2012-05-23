@@ -26,9 +26,8 @@ vector<string> Controller::commandParser() {
 MyMap Controller::generateIndex(string inputFile) {
 	FileIndexer indexer(inputFile);
 	MyMap index;
-	Timer timer;
 	timer.start();
-	index = indexer.IndexFile();
+	index = indexer.indexFile();
 	cout << "Zeit: " << fixed << setprecision (3) << timer.stop() << endl;
 	return index;
 }
@@ -91,7 +90,6 @@ void Controller::printPositionVector(vector<Entry> positions)  {
 }
 
 void Controller::printWordIndex(string word, MyMap indexMap) {
-	Timer timer;
 	timer.start();
     MyMap::iterator iterator = indexMap.find(word);
     if(iterator != indexMap.end()) {
@@ -103,7 +101,6 @@ void Controller::printWordIndex(string word, MyMap indexMap) {
 }
 
 void Controller::printWordsIndexes(string word, MyMap indexMap)  {
-	Timer timer;
 	timer.start();
     MyMap::iterator iterator;
     MyMap result; 

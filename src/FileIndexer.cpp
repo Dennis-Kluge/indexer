@@ -8,7 +8,7 @@ FileIndexer::FileIndexer(string file) {
 
 
 
-MyMap FileIndexer::IndexFile() {
+MyMap FileIndexer::indexFile() {
 	ifstream inputStream(mFile.data()) ;
     if (!inputStream) {
         cout << "Eingabedatei \"" << mFile << "\" konnte nicht geoeffnet werden!" << endl ;
