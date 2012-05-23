@@ -46,20 +46,26 @@ void FileIndexer::PrintWordsIndexes(string word)
 
     MyMap::iterator it ;
     MyMap result; 
-    for(it = indexMap.begin(); it != indexMap.end(); ++it) 
-    {
-        string sub = (*it).first.substr(0,word.size());
-       if(word == sub)
+    if(word.size() == 0) {
+        PrintResult();
+    } else {
+        for(it = indexMap.begin(); it != indexMap.end(); ++it) 
         {
-            result.insert(make_pair((*it).first,(*it).second)) ;   
-        } 
-    }
-    if(result.size() == 0)
-    {
-        cout << "Es sind keine Wörter mit diesen Anfangsbuchstaben vorhanden" ;
-    } else 
-    {
-        PrintResult(result) ;    
+            string sub = (*it).first.substr(0,word.size());
+            transform(word.begin(), word.end(), word.begin(), ::tolower);
+            transform(sub.begin(), sub.end(), sub.begin(), ::tolower);
+           if(word == sub)
+            {
+                result.insert(make_pair((*it).first,(*it).second)) ;   
+            } 
+        }
+        if(result.size() == 0)
+        {
+            cout << "Es sind keine Wörter mit diesen Anfangsbuchstaben vorhanden" ;
+        } else 
+        {
+            PrintResult(result) ;    
+        }
     }
     
 }

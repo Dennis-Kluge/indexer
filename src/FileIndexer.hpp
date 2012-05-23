@@ -11,6 +11,8 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <stdio.h>
+#include <ctype.h>
 
 
 
