@@ -9,12 +9,13 @@ Dienstag:
 
 
 Mittwoch:
-	- Aussagekräftige Fehlermeldungen bei Fehlerhafter Eingabe -> muss überprüft werden
+	+ Aussagekräftige Fehlermeldungen bei Fehlerhafter Eingabe -> muss überprüft werden
 	+ Die Form der Ausgabe des Index -> Mit Dennis abgesprochen
-	- Zeichenkodierung ISO Latin1 
-	- Arbeitsspeicherfreigabe
+	+ Zeichenkodierung ISO Latin1 
+	+ Arbeitsspeicherfreigabe
 	+ Zeitmessung
 	+ Verwendung vom Klassentemplate pair 
 	- Klassendiagramm
 	- Code aufräumen
 	- Code dokumentieren
+	- Einrückungen überprüfen
