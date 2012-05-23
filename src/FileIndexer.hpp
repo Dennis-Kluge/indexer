@@ -1,3 +1,7 @@
+#ifndef FILEINDEXER_HPP
+#define FILEINDEXERHPP
+
+
 #include "Types.h"
 #include "Parser.hpp"
 
@@ -40,3 +44,4 @@ class FileIndexer
         void PrintPositionVector(vector<Entry> v);
 } ;
 
+#endif
