@@ -8,9 +8,8 @@ VALGRIND = valgrind --tool=memcheck --leak-check=full -v --dsymutil=yes
 PROGARGS = Testdaten/Euler.txt Ausgabe.txt
 DOXYGEN = doxygen
 DOXYFILE = Doxyfile
-
-LIBRARIES = #-l/opt/local/lib
-INCLUDES = #-I/opt/local/include/gcc45/c++
+#LIBRARIES = -l/opt/local/lib
+#INCLUDES = -I/opt/local/include/gcc45/c++
 
 all: ${OBJECTS} ${HEADER}
 	${CC} ${CFLAGS} ${PARAMS} ${OBJECTS} ${INCLUDES} -o ${PROGNAME} ${LIBRARIES}

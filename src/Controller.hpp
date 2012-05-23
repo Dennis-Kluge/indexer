@@ -12,8 +12,8 @@ using namespace std;
 /*!
  * Die Controller-Klasse dient als Einstiegspunkt zur Generierung des Indexes 
  * und Verarbeitung der Kommandozeilenparameter.
- * \author Swen Hutop
- * \author Dennis Kluge
+ * @author Swen Hutop
+ * @author Dennis Kluge
  */
 class Controller {
 
@@ -29,16 +29,16 @@ public:
 	~Controller();
 	
 	/*!
-	 * Stößt die die Generierung des Indexes an und überwacht die Eingabe
-	 * \param[in] argc Die Anzahl der Kommandozeilenparameter
-	 * \param[in] argv Die Kommandozeilenoptionen
+	 * Stoeßt die Generierung des Indexes an und ueberwacht die Eingabe
+	 * @param argc Die Anzahl der Kommandozeilenparameter
+	 * @param argv Die Kommandozeilenoptionen
 	 */
 	int runIndexer(int argc, char* argv[]);
 
 	/*!
 	 * Schreibt den Index in das Output File
-	 * \param[in] outputFile Name der Ausgabedatei
-	 * \param[in] index Der erstellte Wortindex
+	 * @param outputFile Name der Ausgabedatei
+	 * @param index Der erstellte Wortindex
 	 */
 	void writeIndexFile(string outputFile, MyMap index);
 
@@ -55,12 +55,14 @@ private:
 	void printUsage();
 
 	/*!
-	 * Gibt einen Vector mit dem geparsten Befehl und den dazugehörigen Parametern. 
+	 * Gibt einen Vector mit dem geparsten Befehl und den dazugehoerigen Parametern. 
+	 * @return Vercotr mit Befehl und Parametern 
 	 */
 	vector<string> commandParser();
 
 	/*!
 	 * Ruft den FileIndexer zum generieren des Indexes auf. 
+	 * @return Der genrierte Index
 	 */
 	MyMap generateIndex(string inputFile);
 
@@ -72,7 +74,7 @@ private:
 	void printResult(MyMap indexMap);
 
     /*!
-    * Gibt den Index für ein spezifiziertes Wort an wenn 
+    * Gibt den Index fuer ein spezifiziertes Wort an wenn 
     * dies einmal vorhanden ist
     * @param word Das gesuchte Wort
     * @param indexMap Der Index
@@ -80,7 +82,7 @@ private:
     void printWordIndex(string word, MyMap indexMap);  
 
     /*!
-    * Gibt den Index für ein spezifiziertes Wort an wenn 
+    * Gibt den Index fuer ein spezifiziertes Wort an wenn 
     * dies mehrmals vorhanden ist
     * @param word Das gesuchte Wort
     * @param indexMap Der Index
@@ -88,7 +90,7 @@ private:
     void printWordsIndexes(string word, MyMap indexMap);    
 
  	/*!
-    * Gibt die Positionen für einen Vector von Entries aus.
+    * Gibt die Positionen fuer einen Vector von Entries aus.
     * @param v Ein Vector von Entries
     */
     void printPositionVector(vector<Entry> v);

@@ -6,8 +6,6 @@ FileIndexer::FileIndexer(string file) {
 	mFile = file;
 }
 
-
-
 MyMap FileIndexer::indexFile() {
 	ifstream inputStream(mFile.data()) ;
     if (!inputStream) {
@@ -35,6 +33,6 @@ MyMap FileIndexer::indexFile() {
     	i++;
     }
     inputStream.close() ;   
-   return indexMap;
+    return indexMap;
 }
 

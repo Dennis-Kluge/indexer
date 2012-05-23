@@ -1,13 +1,13 @@
 /*! @mainpage Indexer: Das Programm erstellt einen lexikographisch 
  *  sortierten Index einer Eingabedatei und schreibt diese ebenfalls
- *  in eine Datei. Zusätzlich erfolgt die Bedienung über interaktive 
- *  Kommandos um einzelne Wörter und deren Positionen zu finden.
+ *  in eine Datei Ausgabedatei. Zusaetzlich erfolgt die Bedienung über interaktive 
+ *  Kommandos um einzelne Woerter und deren Positionen zu finden.
  * 
  *  Das Programm wird wie folg bedient: \n
  *	\n
  *	\c indexer <inputfile> <outputfile> \n
  *	\c <inputfile>  : Die Datei für die der Index erstellt werden soll\n
- *	\c <outputfile> : Der Name Datei die den Index enthält\n
+ *	\c <outputfile> : Der Name Datei die den Index enthaelt\n
  *  \n
  *	\c Interaktive Kommandos: \n
  *  \c w! <Wort> Gib den Index zum Wort <Wort> aus. \n

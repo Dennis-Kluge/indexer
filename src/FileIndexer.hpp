@@ -1,5 +1,5 @@
 #ifndef FILEINDEXER_HPP
-#define FILEINDEXERHPP
+#define FILEINDEXER_HPP
 
 #include "Types.hpp"
 #include "Parser.hpp"
@@ -12,7 +12,7 @@
 
 using namespace std ;
 /*!
- * Diese Klasse erstellt aus einer Eingabedaetei einen dazugehörigen
+ * Diese Klasse erstellt aus einer Eingabedaetei einen dazugehoerigen
  * lexikographisch sortierten Wortindex in der Form:
  * <token> (BLANK ’(’<zeilennummer>’,’<spaltennummer>’)’ )+ .
  *
@@ -29,7 +29,9 @@ class FileIndexer {
     	FileIndexer(string file);
 
         /*!
-        * Indiziert die spezifizierte Datei 
+        * Indiziert die spezifizierte Datei und 
+        * gibt den generierten Index zurueck.
+        * @return Der generierte Index
         */
     	MyMap indexFile();
   

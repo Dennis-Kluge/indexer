@@ -12,7 +12,7 @@ using namespace std;
 
 /*!
 * Der Parser filtert aus einer gegebenen Zeile mit Hilfe eines 
-* regulären Ausdrucks die inhaltenden Wörter heraus. 
+* regulaeren Ausdrucks die inhaltenden Woerter heraus. 
 * @author Swen Hutop
 * @author Dennis Kluge
 */
@@ -20,22 +20,22 @@ class Parser {
 	
 public:
 	/*!
-	 * Der Konstruktor für die Objektorientierung
+	 * Der Konstruktor fuer die Objektorientierung
 	 */
 	Parser();
 
 	/*!
-	 * Der Destruktor für die Objektorientierung
+	 * Der Destruktor fuer die Objektorientierung
 	 */
 	~Parser();
 	
 	/*!	
-	*	Eine übergebene Zeile wird in einzelne Wörter zerlegt, die in einem 
-	*	anschließend zurückgegebenen Container vector<string> abgelegt werden. Gültige 
-	*	Wörter sind Zeichenketten, die dem regulären Ausdruck 
+	*	Eine uebergebene Zeile wird in einzelne Woerter zerlegt, die in einem 
+	*	anschließend zurueckgegebenen Container vector<string> abgelegt werden. Gueltige 
+	*	Woerter sind Zeichenketten, die dem regulaeren Ausdruck 
 	*	[a-zA-Z_]([a-zA-Z0-9_])* entsprechen.
-	*	@param[in] text Zeile, die in gültige Wörter zerlegt werden soll
-	*	@returns die gültigen Wörter der Zeile in einem Vektor
+	*	@param[in] text Zeile, die in gueltige Woerter zerlegt werden soll
+	*	@returns die gueltigen Woerter der Zeile in einem Vektor
 	*/
 	vector<string> parseInputLine(string const text);
 };

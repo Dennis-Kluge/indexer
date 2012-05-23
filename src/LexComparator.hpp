@@ -1,12 +1,12 @@
 #ifndef LEXCOMPERATOR_HPP
-#define LEXCOMPERATORHPP
+#define LEXCOMPERATOR_HPP
 
 #include <string>
 
 using namespace std;
 
 /*!
- * Der LexComparator vergleicht zwei Wörter nach lexikographischer 
+ * Der LexComparator vergleicht zwei Woerter nach lexikographischer 
  * Sortierung miteinander. 
  *
  * @author Swen Hutop
@@ -25,7 +25,7 @@ public:
 	~LexComparator();
 
 	/*!
-	 * Der Operator () führt hier einen lexikographischen Wortvergleich
+	 * Der Operator () fuehrt hier einen lexikographischen Wortvergleich
 	 * zweier Strings durch.
 	 * @param a der erste String
 	 * @param b der zweite String

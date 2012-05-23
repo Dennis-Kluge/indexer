@@ -24,7 +24,7 @@ typedef pair<int, int> Entry;
 /*!
 * Der Index besteht aus eine Map deren Key das Wort und als Value 
 * ein vector von Entries genutzt wird. 
-* Die Sortierung übernimmt der LexComparator 
+* Die Sortierung uebernimmt der LexComparator 
 */
 typedef map<string, vector<Entry>, LexComparator> MyMap;
 

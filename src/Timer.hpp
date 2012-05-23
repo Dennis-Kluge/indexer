@@ -4,8 +4,8 @@
 #include <time.h>
 
 /*!
-* Der Timer berechnet die Ausführzeit zwischen dem 
-* Start- und Endzeitpunkt
+* Der Timer berechnet die Ausfuehrzeit zwischen dem 
+* Start- und Endzeitpunkt.
 * @author Swen Hutop
 * @author Dennis Kluge
 */
@@ -30,8 +30,8 @@ public:
 
 	/*!
 	* Beendet die Messung und gibt das Ergebnis in
-	* Sekunden zurück. 
-	* @return Die Ausführzeit in Sekunden
+	* Sekunden zurueck. 
+	* @return Die Ausfuehrzeit in Sekunden
 	*/	
 	double stop();
 };
