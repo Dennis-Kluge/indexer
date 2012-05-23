@@ -28,13 +28,13 @@ int Controller::runIndexer(int argc, char* argv[]) {
 	while(input)  {		
 		string line;
 		getline(cin,line);
-		istringstream inputStram(line);
+		istringstream inputStream(line);
 		vector<string> command ;
 		do {
 			string sub;
-			inputStram >> sub;
+			inputStream >> sub;
 			command.push_back(sub);
-		} while (inputStram);
+		} while (inputStream);
 		if(command.size() > 3) {
 			cout << "Sie haben zu viele Befehle/Wörter angegeben" << endl;
 			printUsage();
@@ -59,24 +59,22 @@ int Controller::runIndexer(int argc, char* argv[]) {
 }
 
  void Controller::writeIndexFile(string outputFile, MyMap index){
- 	ofstream aus(outputFile.data());
- 	if(!aus) {
+ 	ofstream outputStream(outputFile.data());
+ 	if(!outputStream) {
  		cerr << "Datei kann nicht geöffnet werden";
  	}
 
-  	MyMap::iterator iter = index.begin();
-    while(iter != index.end())
-    {     
-    	aus << (*iter).first << "(";
-    	 std::vector<Entry>::iterator itvec;
-        for(itvec = (*iter).second.begin(); itvec != (*iter).second.end(); itvec++) {
-            Entry pos = *itvec;
-            aus << "(" << pos.first << "," << pos.second << ")" ;
-        }
-        aus << ")" <<endl;
-         ++iter;
+  MyMap::iterator iter = index.begin();
+  while(iter != index.end()) {     
+  	outputStream << (*iter).first 
+   	std::vector<Entry>::iterator itvec;
+    for(itvec = (*iter).second.begin(); itvec != (*iter).second.end(); itvec++) {
+    	Entry pos = *itvec;
+      outputStream << " (" << pos.first << "," << pos.second << ")" ;
     }
-
+    outputStream <<endl;
+    ++iter;
+  }
  }
 
  void Controller::printUsage() {
