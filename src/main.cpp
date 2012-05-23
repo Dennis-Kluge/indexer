@@ -1,31 +1,21 @@
-/*! \mainpage Indexer: Erstellung und Benutzung eines assoziativen Indexes fuer Programmtexte
- *	Die Anwendung Indexer erstellt einen Index f¸r gegebene Programmtexte und kann diese 
- *	Indexdateien wieder einlesen. Des weiteren sind die Ausgabe des gesamten Index sowie 
- *	Anfragen an diesen mˆglich.
- *	Das Programm kann mit den folgenden Kommandozeilenparametern gestartet werden:\n
- *	\n
- *	\c <program> <inputfile> <outputfile> \n
- *	\c <program> : Programmname\n
- *	\c <inputfile> : Programmname\n
- *	\c -p Ausgabe der Indexliste am Terminal\n
- *	\c   -i Erstellen des Indexes\n
- *	\c   -q=<wort> : Ausgeben des vollständigen Indexes zum Wort wort am Terminal\n
- *	\c   -s=<wortanfang> : Ausgeben des vollständigen Indexes zu allen Wˆrtern mit dem Wortanfang wortanfang am Terminal\n
- *	\c   -t=<dateiname> : Ausgeben der Indizes zu allen Wˆrtern, die in der Datei dateiname vorkommen, am Terminal\n
- *	\c <outputfile> : Dateiname der Ausgabedatei mit der Indexliste\n
- *	\c <inputfile>* : Liste von Eingabedateien mit zu indizierendem Text\n
- *	
- *	\section Aufrufdiagramm
- *	 \image html callgraph.jpg "Indexer Aufrufdiagramm"
- *	 \image latex callgraph.eps "Indexer Aufrufdiagramm"
- *
- * \author Dennis Kluge
- * \author Swen Hutop
+/*! @mainpage Indexer: Das Programm erstellt einen lexikographisch 
+ *  sortierten Index einer Eingabedatei und schreibt diese ebenfalls
+ *  in eine Datei. Zusätzlich erfolgt die Bedienung über interaktive 
+ *  Kommandos um einzelne Wörter und deren Positionen zu finden.
  * 
- */
-
-/*!
- * \file main.cpp
+ *  Das Programm wird wie folg bedient: \n
+ *	\n
+ *	\c indexer <inputfile> <outputfile> \n
+ *	\c <inputfile>  : Die Datei für die der Index erstellt werden soll\n
+ *	\c <outputfile> : Der Name Datei die den Index enthält\n
+ *  \n
+ *	\c Interaktive Kommandos: \n
+ *  \c w! <Wort> Gib den Index zum Wort <Wort> aus. \n
+ *  \c a! <Wortanfang> Gib die Indizes zu allen Woertern aus, die den Wortanfang <Wortanfang> besitzen. \n
+ *  \c q! Beende das Programm. \n
+ *
+ * @author Swen Hutop
+ * @author Dennis Kluge 
  */
 
 #include "Controller.hpp"
@@ -33,9 +23,9 @@
 using namespace std;
 
 /*!
- * Einstiegspunkt in das Programm.
- * \param[in] argc Anzahl der Kommandozeilenparameter
- * \param[in] argv die eigentlichen Kommandozeilenparameter
+ * Haupteinstiegspunkt des Indexers
+ * @param argc Anzahl der Kommandozeilenparameter
+ * @param argv die eigentlichen Kommandozeilenparameter
  */
 int main(int argc, char* argv[]) {
 	 Controller c;
