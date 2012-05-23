@@ -11,7 +11,7 @@ Parser::~Parser() {
 }
 
 vector<string> Parser::parseInputLine(string const text) {
-	vector<string> return_vector;
+	vector<string> words;
 	size_t first = 0;
 	bool found = false;
 	for(size_t i = 0; i<=text.length(); ++i) {
@@ -25,11 +25,11 @@ vector<string> Parser::parseInputLine(string const text) {
 			found = true;
 		} else {
 			if(found) {
-				return_vector.push_back(text.substr(first, i-first));
+				words.push_back(text.substr(first, i-first));
 				found = false;
 			}
 			first = i + 1;
 		}
 	}
-	return return_vector;
+	return words;
 }
