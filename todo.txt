@@ -10,7 +10,7 @@ Dienstag:
 
 Mittwoch:
 	- Aussagekräftige Fehlermeldungen bei Fehlerhafter Eingabe -> muss überprüft werden
-	- Die Form der Ausgabe des Index -> muss überprüft werden
+	+ Die Form der Ausgabe des Index -> Mit Dennis abgesprochen
 	- Zeichenkodierung ISO Latin1 
 	- Arbeitsspeicherfreigabe
 	- Zeitmessung
