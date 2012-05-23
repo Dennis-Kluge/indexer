@@ -13,7 +13,7 @@ Mittwoch:
 	+ Die Form der Ausgabe des Index -> Mit Dennis abgesprochen
 	- Zeichenkodierung ISO Latin1 
 	- Arbeitsspeicherfreigabe
-	- Zeitmessung
+	+ Zeitmessung
 	+ Verwendung vom Klassentemplate pair 
 	- Klassendiagramm
 	- Code aufräumen

@@ -1,4 +1,5 @@
 #include "Controller.hpp"
+#include "Timer.hpp"
 
 
 using namespace std;
@@ -19,7 +20,10 @@ int Controller::run_indexer(int argc, char* argv[])
 	string filename(argv[1]);
 	FileIndexer indexer(filename);
 	MyMap index;
+	Timer timer;
+	timer.start();
 	index = indexer.IndexFile();
+	cout << "Zeit: " << fixed << setprecision (3) << timer.stop() << endl;
 	writeIndexFile(argv[2], index);
 	string c;
 	string word;
@@ -42,9 +46,13 @@ int Controller::run_indexer(int argc, char* argv[])
 		}
 		if(com.size() >= 1 && com.size() <= 3) {
 			if(com[0] == "w!") {
+				timer.start();
 				indexer.PrintWordIndex(com[1]);
+				cout << "Zeit: " << fixed << setprecision (3) << timer.stop() << endl;
 			} else if(com[0] == "a!") {
+				timer.start();
 				indexer.PrintWordsIndexes(com[1]);
+				cout << "Zeit: " << fixed << setprecision (3)  << timer.stop() << endl;
 			} else if(com[0] == "q!") {
 				return EXIT_SUCCESS ;				
 			} else {
