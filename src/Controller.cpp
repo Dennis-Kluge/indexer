@@ -1,7 +1,6 @@
 #include "Controller.hpp"
 #include "Timer.hpp"
 
-
 using namespace std;
 
 Controller::Controller() {
@@ -10,12 +9,10 @@ Controller::Controller() {
 Controller::~Controller() {
 }
 
-
-int Controller::run_indexer(int argc, char* argv[])
-{
-	if(argc != 3){
-		cout << "Es wurden nicht genug Argumente angegeben" << endl;
-		return EXIT_FAILURE ;
+int Controller::runIndexer(int argc, char* argv[]) {
+	if(argc != 3) {		
+		printUsage();
+		return EXIT_FAILURE;
 	}
 	string filename(argv[1]);
 	FileIndexer indexer(filename);
@@ -28,45 +25,42 @@ int Controller::run_indexer(int argc, char* argv[])
 	string c;
 	string word;
 	bool input = true;
-	while(input) 
-	{
-		//cout << "Befehl eingeben: " ; 
+	while(input)  {		
 		string line;
 		getline(cin,line);
-		istringstream iss(line);
-		vector<string> com ;
-		do
-		{
+		istringstream inputStram(line);
+		vector<string> command ;
+		do {
 			string sub;
-			iss >> sub;
-			com.push_back(sub);
-		} while (iss);
-		if(com.size() > 3) {
+			inputStram >> sub;
+			command.push_back(sub);
+		} while (inputStram);
+		if(command.size() > 3) {
 			cout << "Sie haben zu viele Befehle/Wörter angegeben" << endl;
+			printUsage();
 		}
-		if(com.size() >= 1 && com.size() <= 3) {
-			if(com[0] == "w!") {
+		if(command.size() >= 1 && command.size() <= 3) {
+			if(command[0] == "w!") {
 				timer.start();
-				indexer.PrintWordIndex(com[1]);
+				indexer.PrintWordIndex(command[1]);
 				cout << "Zeit: " << fixed << setprecision (3) << timer.stop() << endl;
-			} else if(com[0] == "a!") {
+			} else if(command[0] == "a!") {
 				timer.start();
-				indexer.PrintWordsIndexes(com[1]);
+				indexer.PrintWordsIndexes(command[1]);
 				cout << "Zeit: " << fixed << setprecision (3)  << timer.stop() << endl;
-			} else if(com[0] == "q!") {
-				return EXIT_SUCCESS ;				
+			} else if(command[0] == "q!") {
+				return EXIT_SUCCESS;				
 			} else {
 				cout << "Befehl nicht bekannt!" << endl;
 			}
-		}
-		
+		}		
 	}
+	return EXIT_SUCCESS;	
 }
 
  void Controller::writeIndexFile(string outputFile, MyMap index){
  	ofstream aus(outputFile.data());
- 	if(!aus)
- 	{
+ 	if(!aus) {
  		cerr << "Datei kann nicht geöffnet werden";
  	}
 
@@ -83,4 +77,17 @@ int Controller::run_indexer(int argc, char* argv[])
          ++iter;
     }
 
+ }
+
+ void Controller::printUsage() {
+ 	cout << "Benutzung des Programmes" << endl;
+ 	cout << "-----------------------------" << endl;
+ 	cout << "indexer <inputfile> <outputfile>" << endl;
+ 	cout << "<inputfile>  : Dateiname der Eingabedatei mit dem zu indizierenden Text" << endl;
+ 	cout << "<outputfile> : Dateiname der Ausgabedatei fuer den erstellten Index" << endl;
+ 	cout << "Interaktive Kommandos" << endl;
+ 	cout << "w! <Wort> Gib den Index zum Wort <Wort> aus." << endl;
+ 	cout << "a! <Wortanfang> Gib die Indizes zu allen Woertern aus, die den Wortanfang <Wortanfang> besitzen." << endl;
+ 	cout << "a! <Wortanfang> Gib die Indizes zu allen Woertern aus, die den Wortanfang <Wortanfang> besitzen." << endl;
+ 	cout << "q! Beende das Programm." << endl;
  }
