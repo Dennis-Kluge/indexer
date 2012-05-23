@@ -28,7 +28,6 @@
  * \file main.cpp
  */
 
-//#include "controller.h"
 #include "Controller.hpp"
 
 using namespace std;
@@ -40,5 +39,5 @@ using namespace std;
  */
 int main(int argc, char* argv[]) {
 	 Controller c;
-	 return c.run_indexer(argc, argv);
+	 return c.runIndexer(argc, argv);
 }
