@@ -104,13 +104,9 @@ MyMap FileIndexer::IndexFile(){
         for(lwi = lineWords.begin(); lwi != lineWords.end(); ++lwi) {
             vector<Entry> words;
             Entry position (i,j);
-            MyMap::iterator it;
-            it = indexMap.find(*lwi);
-            if(it != indexMap.end()) {
-                words = (*it).second;
-            }
-            words.push_back(position);
             string word = *lwi ;
+            words = indexMap[word];        
+            words.push_back(position);
             indexMap[word] = words;
             j++;
         }
@@ -120,3 +116,4 @@ MyMap FileIndexer::IndexFile(){
     
    return indexMap;
 }
+

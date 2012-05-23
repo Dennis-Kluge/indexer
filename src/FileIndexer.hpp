@@ -38,6 +38,5 @@ class FileIndexer
     	MyMap indexMap;
     	FileIndexer() {}
         void PrintPositionVector(vector<Entry> v);
-
 } ;
 
