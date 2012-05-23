@@ -10,7 +10,7 @@ Parser::Parser() {
 Parser::~Parser() {
 }
 
-vector<string> Parser::parse_input_line(string const text) {
+vector<string> Parser::parseInputLine(string const text) {
 	vector<string> return_vector;
 	size_t first = 0;
 	bool found = false;
