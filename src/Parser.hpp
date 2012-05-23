@@ -29,7 +29,7 @@ public:
 		@param[in] text Zeile, die in gültige Wörter zerlegt werden soll
 		@returns die gültigen Wörter der Zeile in einem Vektor
 		*/
-	vector<string> parse_input_line(string const text);
+	vector<string> parseInputLine(string const text);
 };
 
 
