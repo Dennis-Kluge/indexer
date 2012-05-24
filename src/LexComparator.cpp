@@ -10,7 +10,7 @@ LexComparator::~LexComparator() {
 }
 
 bool LexComparator::compare(char a, char b) {
-	if(tolower(a) == tolower(b)) {
+	if(a == b) {
 		return a < b; 
 	}
 	return tolower(a) < tolower(b);
