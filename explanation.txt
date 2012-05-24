@@ -1,12 +1,16 @@
 Datenstruktur
 
-Als Datenstruktur für den Index wurde sich dafür entschieden eine Map zu nutzen.
-Hierfür wird als Key das indizierte Wort und als Value ein Vector von Pairs von Einträgen genutzt. 
-Die Einträge definieren sich durch Zeilen- und Spaltennummer. 
+Als generelle Datenstruktur für den Index wurde sich dafür entschieden eine Map zu nutzen.
+Hierfür wird als Key das indizierte Wort und als Value ein Vector von Pairs von Entries genutzt. 
+Ein Entry definiert sich durch Zeilen- und Spaltenmummer. 
+So ergibt sich die folgende Definition: 
+	// ein pair mit Zeilen- und spalte
+	typedef pair<int, int> Entry;
+	typedef map<string, vector<Entry>, LexComparator> MyMap;
 
 Der Einsatz einer Map hat wesentliche Vorteile in der Suche des Keys im Gegensatz zu 
-einem Vector oder eine Liste sind diese als Baum sortiert. Hierdurch sinken die 
-Zugriffszeiten. Der Vector als Value eignet sich dadurch, dass im Index öfter Keys 
+beispielsweise einem Vector oder eine Liste sind die Einträge als Baum organisiert. 
+Hierdurch sinken die Zugriffszeiten. Der Vector als Value eignet sich dadurch, dass im Index öfter Keys 
 als deren Werte geschrieben werden. Zwar ist das Hinzufügen von Werten bei Vektoren mit vielen 
 Datensätzen Zeit- und Speicheraufwändig, jedoch fällt dies bei dem implementierten Indexer 
 erst bei sehr großen Daten ins Gewicht. Pairs sind ideal für die Speicherung von 
