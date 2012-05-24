@@ -25,21 +25,16 @@ public:
 	 */
 	~LexComparator();
 
-	/*!
+
+/*!
 	 * Der Operator () fuehrt hier einen lexikographischen Wortvergleich
 	 * zweier Strings durch.
 	 * @param a der erste String
 	 * @param b der zweite String
 	 * @return Ob a kleiner ist als b
 	 */
-	bool operator() (string, string);
+bool operator()( const std::string &a, const std::string &b ) const;
 
-	/*!
-	 * Die Compare-Funktion zum Wortvergleich
-	 * @param a der erste String
-	 * @param b der zweite String	 
-	 */
-	static bool compare(char, char);
 };
 
 #endif

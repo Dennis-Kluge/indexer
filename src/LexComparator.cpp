@@ -9,14 +9,18 @@ LexComparator::LexComparator() {
 LexComparator::~LexComparator() {
 }
 
-bool LexComparator::compare(char a, char b) {
-	if(a == b) {
-		return a < b; 
-	}
-	return tolower(a) < tolower(b);
-}
-
-bool LexComparator::operator() (string a, string b) {
-	return lexicographical_compare(a.begin(), a.end(), b.begin(), b.end(), compare);
+bool LexComparator::operator()( const string &a, const string &b ) const { 
+    int result = strcasecmp(&a[0],&b[0]);
+    if (result > 0) {
+        return false;
+    } else if (result < 0) {
+        return true;
+    } else if (result == 0) {
+        if (int(a[0]) < int(b[0]))
+            return true;
+        else
+            return false;
+    }
+    return false;
 }
 
